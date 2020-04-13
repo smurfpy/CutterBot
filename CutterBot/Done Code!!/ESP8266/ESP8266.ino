@@ -40,10 +40,16 @@ void setup(void){
   Serial.println(ESP.getFreeSketchSpace());
 
   // แสดงบนหน้าเว็บ
+  webPage += "<body background=https://www.234.in.th/images/2020/04/14/112.jpg bgproperties=fixed></body>";
   webPage += "<h1><font color= blue >Cutter Bot</h1></font>";
-  webPage += "<p>Control Motor <a href=\"FORWARD\"><button>FORWARD</button></a>&nbsp;<a href=\"RIGHT\"><button>RIGHT</button></a>&nbsp;<a href=\"LEFT\"><button>LEFT</button></a>&nbsp;<a href=\"BACKWARD\"><button>BACKWARD</button></a>&nbsp;<a href=\"STOP\"><button>STOP</button></a></p>";
-  webPage += "<p>Cutter Control <a href=\"ON\"><button>ON</button></a>&nbsp;<a href=\"OFF\"><button>OFF</button></a>";
-  webPage += "<br><img src= https://www.234.in.th/images/2020/04/07/laffy.jpg align = center></br>";
+  webPage += "<p>Control Motor <br><table><tr><td></td><td><div align=center><a href=\"FORWARD\"><button>FORWARD</button></a></div></td><td></td></tr>"
+                                      "<tr><td><div align=center><a href=\"RIGHT\"><button>RIGHT</button></a></div></td><td>"
+                                      "<div align=center><a href=\"STOP\"><button>STOP</button></a></div></td><td></td><td>"
+                                      "<div align=center><a href=\"LEFT\"><button>LEFT</button></a></div></td></tr><tr><td>&nbsp;</td><td>"
+                                      "<div align=center><a href=\"BACKWARD\"><button>BACKWARD</button></a></div</td>"
+                                      "<td>&nbsp;</td></tr></table>";
+  webPage += "<p>Cutter Control : <a href=\"OFF\"><button>OFF</button></a>&nbsp;<a href=\"ON\"><button>ON</button></a>";
+  webPage += "<br><br><img src= https://www.234.in.th/images/2020/04/07/laffy.jpg align = left width=208 height=116></br>";
   // เริ่มการเชื่อมต่อไวไฟ
   WiFi.begin(ssid, password);
   Serial.println("");
@@ -92,12 +98,12 @@ void setup(void){
     Serial.println("[STOP]");
   }); 
      
-    server.on("/ON", [](){
+    server.on("/OFF", [](){
     server.send(100, "text/html", webPage);
     Serial.println("[ON]");
   });
   
-    server.on("/OFF", [](){
+    server.on("/ON", [](){
     server.send(100, "text/html", webPage);
     Serial.println("[OFF]");
   });
