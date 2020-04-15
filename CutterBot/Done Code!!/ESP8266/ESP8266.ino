@@ -70,7 +70,7 @@ void setup(void){
   }
      
   server.on("/", [](){
-    server.send(200, "text/html", webPage);
+    server.send(100, "text/html", webPage);
   });
   
   server.on("/FORWARD", [](){
