@@ -49,7 +49,11 @@ void setup(void){
                                       "<div align=center><a href=\"BACKWARD\"><button>BACKWARD</button></a></div</td>"
                                       "<td>&nbsp;</td></tr></table>";
   webPage += "<p>Cutter Control : <a href=\"OFF\"><button>OFF</button></a>&nbsp;<a href=\"ON\"><button>ON</button></a>";
-  webPage += "<br><br><img src= https://www.234.in.th/images/2020/04/07/laffy.jpg align = left width=208 height=116></br>";
+  webPage += "<table width=355 border=0>"
+  "<tr><td width=349><img src=https://www.234.in.th/images/2020/05/02/Ro1.jpg width=349 height=249></td></tr>"
+  "<tr><td><img src=https://www.234.in.th/images/2020/05/02/Ro3.jpg width=349 height=215></td></tr>"
+  "<tr><td><img src=https://www.234.in.th/images/2020/05/02/Ro2.jpg width=349 height=254></td></tr>"
+  "<tr><td><img src=https://www.234.in.th/images/2020/05/02/Ro4.jpg width=182 height=394></td></tr></table>";
   // เริ่มการเชื่อมต่อไวไฟ
   WiFi.begin(ssid, password);
   Serial.println("");
